@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        //parameterized function without return type
         function abes(value)
         {
             document.write(value," ");
@@ -14,12 +15,20 @@
         abes("Hello");
         abes("World");
         abes("!");
+        //parameterized function with return type
         function add(a,b)
         {
             let sum=a+b;
             return sum;
         }
         document.write("<br>Sum : ",add(5, 10) );
+        //Arrow function
+        const sub=(a,b) =>
+        {
+            let sub=a-b;
+            return sub;
+        }
+        document.write("<br>Sub : ",sub(10, 5) );
     </script>
 </body>
 </html>
