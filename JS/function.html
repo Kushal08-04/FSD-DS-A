@@ -29,6 +29,28 @@
             return sub;
         }
         document.write("<br>Sub : ",sub(10, 5) );
+        //Assignment function
+        let car=["BMW",500,4];
+        let hele=["Chinuk",700,5];
+        let aero=["Boeing 747",1000,250];
+        const book=(car,hele,aero)=>
+        {
+            let vehicle=prompt("Enter the vehicle you want to book : ");
+            let seats=parseInt(prompt("Enter number of seats : "));
+            if(car==car)
+            {
+                document.write("<br>Car : ",car[0],"<br>Price : ",car[1]*seats,"<br>Seats : ",car[2]);
+            }
+            else if(hele==hele)
+            {
+                document.write("<br>Helicopter : ",hele[0],"<br>Price : ",hele[1]*seats,"<br>Seats : ",hele[2]);
+            }
+            else if(aero==aero)
+            {
+                document.write("<br>Airplane : ",aero[0],"<br>Price : ",aero[1]*seats,"<br>Seats : ",aero[2]);
+            }
+        }
+        book(car,hele,aero);
     </script>
 </body>
 </html>
