@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        //code for looping statements
+        let car=["car1","car2","car3"]
+        let len=car.length;
+        for(let i=0;i<len;i++)
+        {
+            if(i%2==0)
+            {
+                document.write("<br>",car[i]);
+            }
+        }
+        let auto=["car1","car2","car3","car4"]
+        let l=auto.length;
+        let text=" ";
+        for(let i=0;i<l;i++)
+        {
+            text+=auto[i]+"<br>";
+        }
+        document.getElementById("demo").innerHTML=text;
+    </script>
+</body>
+</html>
