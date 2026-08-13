@@ -7,17 +7,25 @@
 </head>
 <body>
     <script>
-        let a=10;
-        let b=12;
-        if (b>a)
-            document.write("True ");
-        if(a%2==b%2)
-            document.write(" true");
-        if(a==b)
-            document.write("True");
-        if(a<b)
-            document.write("True");
-        
+       let num=prompt("Enter a number : ");
+       let temp=num;
+       let count=0;
+       while(temp>0)
+       {
+            temp=Math.floor(temp/10);
+            count++;
+       }
+        let sum=0;
+        for(let n=1;n<=count;n++)
+        {
+            let r=num%10;
+            sum+=(r*r*r);
+            num=Math.floor(num/10);
+        }
+        if(sum==153)
+            document.write("\nTrue, Armstrong number");
+        else
+            document.write("\nFalse, not Armstrong number");
     </script>
 </body>
 </html>
