@@ -26,6 +26,13 @@
             text+=auto[i]+"<br>";
         }
         document.getElementById("demo").innerHTML=text;
+        let t=prompt("Enter the multiplication table you want to display : ");
+        let n=1;
+        while(n<=10)
+        {
+            document.write("<br>",t,"*",n,"=",n*t);
+            n++;
+        }
     </script>
 </body>
 </html>
