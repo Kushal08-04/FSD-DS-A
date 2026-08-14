@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align:center;background-color:rgb(236, 165, 144);width:300px;height:400px;margin:auto;border:1px solid #161414;padding:20px;">
+    <h1>Products</h1>
+    <h3>Tea : 450</h3>
+    <h3>Coffee : 600</h3>
+    <h3>Sugar : 700</h3>
+    <h3>Pulses : 100</h3>
+    
+    <table style="margin-bottom: 20px;width:300px;height:100px;margin:auto;">
+        <tr>
+            <td>Product</td>
+            <td><input type="text" id="prd"></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td><input type="text" id="qt"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <button onclick="calculateAmount()">Calculate Bill</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- Container where the final bill result will display -->
+<div id="result"></div>
+
+<script>
+    const products = {
+        Tea: 450,
+        Coffee: 600,
+        Sugar: 700,
+        Pulses: 100
+    }
+
+    function calculateAmount() {
+        // Read the values ONLY when the user clicks the button
+        let prd = document.getElementById("prd").value.trim();
+        let qt = Number(document.getElementById("qt").value);
+        let resultDiv = document.getElementById("result");
+        
+        let amt = 0;
+        let flg = 0;
+
+        for (let key in products) {
+            // Case-insensitive check (e.g., "tea" or "Tea" both work)
+            if (key.toLowerCase() === prd.toLowerCase()) {
+                amt = products[key] * qt;
+                flg = 1;
+                prd = key; // Standardize name to match exact case
+                break;
+            }
+        }
+
+        if (flg == 0) {
+            alert("Product not found");
+            resultDiv.innerHTML = ""; // Clear old results if any
+        } else {
+            // Replaced document.write with innerHTML to prevent erasing the whole page
+            resultDiv.innerHTML = `
+                <h3 style='text-align:center;color:rgb(38, 41, 42);background-color:ghostwhite;width:300px;height:100px;margin:20px auto; border:1px solid #ccc;'>
+                    Product : ${prd}<br>
+                    Quantity : ${qt}<br>
+                    Amount : ₹${amt}
+                </h3>`;
+        }
+    }
+</script>
+</body>
+</html>
