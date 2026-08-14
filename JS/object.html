@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        //create object
+        const Student={
+            name:"Kushal",
+            class:"B.Tech",
+            fees:29600,
+            department:"Data Science"
+        }
+        for(let key in Student)
+        {
+            document.write(key+" : "+Student[key]+"<br>");
+        }
+        //document.getElementById("demo").innerHTML="Name : "+Student.name+"<br>Class : "+Student.class+"<br>Fees : "+Student.fees+"<br>Department : "+Student.department;
+    </script>
+</body>
+</html>
