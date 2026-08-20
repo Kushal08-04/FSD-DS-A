@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Copying an array
+        const arr1 = [1, 2, 3, 10];
+        const arr2 = [...arr1]; // Shallow copy
+        console.log(arr2); // [1, 2, 3]
+
+        // Merging arrays
+        const arr3 = [4, 5];
+        const merged = [...arr1, ...arr3];
+        console.log(merged); // [1, 2, 3, 4, 5]
+
+        // Expanding in function arguments
+        function sum(...n) {
+            return n.reduce((acc, cur) => acc + cur, 0);
+        }
+        console.log(sum(...merged)); // 6
+
+    </script>
+</body>
+</html>
