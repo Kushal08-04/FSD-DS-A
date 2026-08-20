@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student_details=[
+           {
+            name:"John",
+            course:"B. Tech.",
+            fee:12800
+           },
+           {
+            name:"Smith",
+            course:"B. Tech.",
+            fee:12800
+           },
+           {
+            name:"David",
+            course:"B. Tech.",
+            fee:12800
+           },
+           {
+            name:"Sam",
+            course:"B. Tech.",
+            fee:12800
+           },
+           {
+            name:"Peter",
+            course:"B. Tech.",
+            fee:12800
+           }
+        ];
+        const courses=["B. Tech.", "M. Tech.", "BBA", "MBA", "BCA", "MCA"];
+
+        let detail=prompt("Enter course of student from the following list: B. Tech., M. Tech., BBA, MBA, BCA, MCA");
+        if(!courses.includes(detail)){
+            alert("Please enter a course name");
+        }
+        else{
+            detail=detail.trim();
+        }
+        const result=student_details.filter((i)=>i.course==detail);
+        document.write("<h1>Student Details</h1>");
+        result.forEach((i)=>{
+            document.write("<h3>Name: ",i.name,"<br>");
+            document.write("Course: ",i.course,"<br>");
+            document.write("Fee: ",i.fee,"</h3><br>");
+        });
+    </script>
+</body>
+</html>
